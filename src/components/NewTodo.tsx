@@ -2,19 +2,17 @@ import React, { useState } from 'react'
 import { Todo } from '../models/todo';
 
 interface INewProps{
-    props:{
-        new:Function
-    }
+    onClick : createNewTodo:Function
 }
-export default function NewTodo({props}:INewProps) {
-   
+export default function NewTodo(props:INewProps) {
+    { onClick } = props
     const [newTitle, setTitle] = useState<string>("")
     const [newText, setText] = useState<string>("")
   
     const handleNew = (e:React.FormEvent) =>{
         e.preventDefault()
         const draftTodo = new Todo(newTitle, newText)
-        props.new(draftTodo)
+        createNewTodo(draftTodo)
         setText("")
         setTitle("")
         
