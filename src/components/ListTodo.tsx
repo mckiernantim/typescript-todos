@@ -2,11 +2,11 @@ import React from "react";
 import { Todo } from "../models/todo";
 
 interface IListProps {
-  props: Todo[];
+  todos: Todo[];
   setTodo: Function;
   deleteTodo: Function;
 }
-export default function ListTodo({ props, setTodo, deleteTodo }: IListProps) {
+export default function ListTodo({todos, setTodo, deleteTodo }: IListProps) {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     const ind: number = Number(event.currentTarget.value);
     props[ind].displayContent();
