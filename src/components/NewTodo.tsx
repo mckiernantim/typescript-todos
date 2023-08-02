@@ -13,9 +13,7 @@ export default function NewTodo({props}:INewProps) {
   
     const handleNew = (e:React.FormEvent) =>{
         e.preventDefault()
-        const draftTodo = new Todo(
-            newTitle, newText
-        )
+        const draftTodo = new Todo(newTitle, newText)
         props.new(draftTodo)
         setText("")
         setTitle("")
@@ -26,10 +24,6 @@ export default function NewTodo({props}:INewProps) {
             setTitle(e.target.value) :
             setText(e.target.value)
     }
-    // useEffect( () =>{
-
-    // },[])
-
     return (
         <div>
             <label htmlFor="newTodo">Enter a new Todo</label>
@@ -41,7 +35,7 @@ export default function NewTodo({props}:INewProps) {
             <form name="newTodo">
                 <label htmlFor="title"> Enter New Title</label>
                 <input name="title" onChange={handleChange} value={newTitle}></input>
-                <label htmlFor ="text"> Enter New Tet</label>
+                <label htmlFor ="text"> Enter New Todo</label>
                 <textarea name = "text"onChange={handleChange} value={newText}></textarea>
                 
                 <button type="submit" onClick={handleNew}>Submit</button>
