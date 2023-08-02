@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
        We have {todos.length} items to bring to your attention
-    <ListTodo  props = {todos} 
+    <ListTodo  todos = {todos} 
      setTodo = {setTodos}
      deleteTodo = {deleteTodo}/>
      <NewTodo props = {{new:newTodo}} />
