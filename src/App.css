@@ -1,16 +1,29 @@
+:root {
+  --blue: rgb(47, 47, 223);
+}
+html{
+  height:100vh;
+  
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .App {
   text-align: center;
-}
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  grid-template-areas:
+  "h h h h"
+  "m m m n";
+  max-width: 60%;
+  margin: 0 auto;
+    border:2px solid var(--blue)
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -24,15 +37,40 @@
   color: white;
 }
 
+main {
+  grid-area: m;
+  border:2px solid  var(--blue)
+}
+
+.list-container {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+aside {
+  grid-area: n;
+  border: 2px solid var(--blue);
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-around;
+  align-items: stretch;
+
+
+}
+header {
+  grid-area:h
+}
+form {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  padding: 20px;
+}
+
+button[type=submit] {
+  margin:20px
+}
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
